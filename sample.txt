@@ -1,0 +1,26 @@
+import pandas as pd
+from src.embedding import Embedder
+from src.data_loader import load_products_json
+from src.vibe_matcher import rank_top_k
+from src.evaluation import run_queries, plot_latency
+
+
+# 1) Load data
+df = load_products_json("data/sample_products.json")
+
+
+# 2) Create embedder (toggle use_openai=True if you have OPENAI_API_KEY)
+embedder = Embedder(use_openai=False)
+
+
+# 3) Single query retrieval
+results, fallback = rank_top_k("energetic urban chic", df, embedder, top_k=3)
+print(results)
+print("Fallback:", fallback)
+
+
+# 4) Batch evaluation
+queries = ["energetic urban chic", "cozy cabin weekend", "beachy minimal summer"]
+res_df, summary_df, latencies = run_queries(queries, df, embedder)
+print(summary_df)
+plot_latency(latencies)
