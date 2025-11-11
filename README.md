@@ -9,8 +9,11 @@ Your plot showed three queries with latencies between ~1.5ms and ~3.8ms — extr
 Top-3 Results for Query: "beachy minimal summer"
 
 ===Results===
-            name                            desc                                vibes                   similarity
-0  Boho Breeze Maxi Dress || Flowy maxi dress in earthy tones... || [boho, free-spirited, festival] ||  -0.001983
+
+| Index | Name                     | Description                            | Vibes                            | Similarity |
+|-------|--------------------------|----------------------------------------|----------------------------------|------------|
+| 0     | Boho Breeze Maxi Dress   | Flowy maxi dress in earthy tones...    | boho, free-spirited, festival    | -0.001983  |
+
 
 
 Fallback:
@@ -19,10 +22,13 @@ No strong match. Try refining with vibe tags like 'boho', 'cozy', 'urban', 'athl
 
 ✅ Summary Metrics (across all 3 queries)
 ===Summary===
-                   query ||  avg_sim  || max_sim || top_hit_good
-0  beachy minimal summer    0.005811     0.005811             0
-1     cozy cabin weekend    0.001126     0.001126             0
-2   energetic urban chic    -0.001983   -0.001983             0
+
+
+| Query                  | Avg Similarity | Max Similarity | Good Match |
+|------------------------|----------------|----------------|------------|
+| beachy minimal summer  | 0.005811       | 0.005811       | 0          |
+| cozy cabin weekend     | 0.001126       | 0.001126       | 0          |
+| energetic urban chic   | -0.001983      | -0.001983      | 0          |
 
 
 These low similarity values are expected when using mock embeddings, since they are designed for offline testing, not semantic semantic search.
